@@ -73,7 +73,7 @@ C:\> ConvertTo-Html -InputObject (Example)
 Stops one or more running processes.
 
 ```bash
-Stop-Process -Name "Example"
+C:\> Stop-Process -Name "Example"
 ```
 
 ### Import-CliXML, Export-CliXML
@@ -81,9 +81,32 @@ Imports a CLIXML file and creates corresponding objects in Powershell.
 Exports an XML-based representation of an object or objects and stores it in a file.
 
 ```bash
-Get-Process | Export-Clixml -Path .\Example.xml
-Import-Clixml -Path .\Example.xml
+C:\> Get-Process | Export-Clixml -Path .\Example.xml
+C:\> Import-Clixml -Path .\Example.xml
 ```
+
+### Get-ADComputer
+Gets one or more Active Directory computers.
+
+```bash
+C:\> Get-ADComputer -Identity "Example" -Properties *
+```
+
+### Select-Object
+Select objects or object properties.
+
+```bash
+C:\> Get-Process | Select-Object -Property ProcessName
+```
+
+### Get-WmiObject
+Gets instances of WMI classes or information about available ones.
+
+### Get-EventLog
+
+=========
 
 ## Week 3 - Pipeline
 Running multiple commands in a "pipeline" ( | ) causes the output of each command to be passed to the next, running each in sequence. It's important to know that any commands placed in parenthesis runs first, and can contain their own pipelines.
+
+## Week 4 - Pipeline, Cont.
