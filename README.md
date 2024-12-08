@@ -367,8 +367,8 @@ Creates a new scheduled task settings object.
 ## Week 3 - Pipeline
 Running multiple commands in a "pipeline" ( | ) causes the output of each command to be passed to the next, running each in sequence. It's important to know that any commands placed in parenthesis runs first, and can contain their own pipelines.
 
-Commands Featured:
-`bash
+Commands Featured: 
+`
 [Import-CSV]
 [ConvertTo-CSV]
 [Export-CSV]
@@ -385,7 +385,7 @@ Commands Featured:
 When working with different commands, it's important to look into the syntax of each, to make sure things won't break on a user when trying to run it.
 
 Commands Featured: 
-`bash
+`
 [Get-ADComputer]
 [Get-Service]
 [Select-Object]
@@ -398,8 +398,8 @@ Commands Featured:
 ## Week 6 - Windows Management Instrumentation
 WMI is an external interface made to organize the management data in a typical Windows computer. If done correctly, PowerShell can access and use this information to its advantage.
 
-Commands Featured:
-`bash
+Commands Featured: 
+`
 [Get-CimClass]
 [Select-Object]
 [Get-CimInstance]
@@ -410,8 +410,8 @@ Commands Featured:
 The Task Scheduler allows a user to run scripts or programs on schedules without intervention from the user or administrator. It's easy to do so through the GUI, but it can also be done with Powershell.
 
 
-Commands Featured:
-`bash
+Commands Featured: 
+`
 [New-ScheduledTaskAction]
 [New-ScheduledTaskTrigger]
 [New-ScheduledTaskPrincipal]
