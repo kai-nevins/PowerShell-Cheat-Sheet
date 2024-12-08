@@ -15,27 +15,63 @@ The following is a list of all commands researched and used for the course. Plea
 
 ### Get-Content
 Gets the content of the item and the specified location.
+`bash
+[-ReadCount]
+[-TotalCount]
+[-Tail]
+[-Path]
+[-Filter]
+[-Include]
+[-Exclude]
+[-Force]
+[-Credential]
+`
 
 ```bash
 C:\> Get-Content -Path .\Example.txt
 ```
 
-### Import-CSV
-Creates a table from items in a CSV file.
-
-```bash
-C:\> Import-Csv -Path .\Examples.csv
-```
-
 ### Get-Process
 Gets the processes that are running on the local computer.
+
+`bash
+[-Name]
+[-Module]
+[-FileVersionInfo]
+`
 
 ```bash
 C:\> Get-Process -Name Example
 ```
 
+### Import-CSV
+Creates a table from items in a CSV file.
+
+`bash
+[-Delimiter]
+[-Path]
+[-Header]
+[-Encoding]
+`
+
+```bash
+C:\> Import-Csv -Path .\Examples.csv
+```
+
 ### Export-CSV
 Converts objects into a series of CSV strings and saves them to a file.
+
+`bash
+[-InputObject]
+[-Path]
+[-Force]
+[-NoClobber]
+[-Delimiter]
+[-IncludeTypeInformation]
+[-NoTypeInformation]
+[-WhatIf]
+[-Confirm]
+`
 
 ```bash
 C:\> Get-Process -Name Example | Export-Csv -Path .\Example.csv
