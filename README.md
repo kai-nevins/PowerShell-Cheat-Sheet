@@ -540,7 +540,112 @@ Gets the CIM instance of a class from a CIM Server.
 Get-CimInstance -ClassName Example
 ```
 
-///
+### New-Item
+Creates a new item.
+
+```bash
+[-Path]
+[-ItemType]
+[-Value]
+[-Force]
+[-Credential]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+New-Item -Path . -Name "Example.txt" -ItemType "File"
+```
+
+### Set-Location
+Sets the current working location to a specified location.
+
+```bash
+[-Path]
+[-PassThru]
+```
+
+```bash
+Set-Location -Path "Example:\"
+```
+
+### Clear-Host
+Clears the display in the host program.
+
+```bash
+cls
+```
+
+### New-Alias
+Creates a new alias.
+
+```bash
+[-Name]
+[-Value]
+[-Description]
+[-Option]
+[-PassThru]
+[-Scope]
+[-Force]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+New-Alias -Name "Example" Get-ChildItem
+```
+
+### Get-Variable
+Gets the variables in the current console.
+
+```bash
+[-Name]
+[-ValueOnly]
+[-Include]
+[-Exclude]
+[-Scope]
+```
+
+```bash
+Get-Variable Example
+```
+
+### New-Variable
+Creates a new variable.
+
+```bash
+[-Name]
+[-Value]
+[-Description]
+[-Option]
+[-Visibility]
+[-Force]
+[-PassThru]
+[-Scope]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+New-Variable Example
+```
+
+### Remove-Variable
+Deletes a variable and its value.
+
+```bash
+[-Name]
+[-Include]
+[-Exclude]
+[-Force]
+[-Scope]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+Remove-Variable Example
+```
 
 ### New-ScheduledTaskAction
 Creates a scheduled task action.
@@ -652,6 +757,9 @@ Register-ScheduledTask -TaskName "Example" -Trigger (time)
 
 =========
 
+## Assignments
+This is a basic synopsis of which assignments used which commands, as well as a small blurb of information pertaining to what was taught for each week.
+
 ## Week 3 - Pipeline
 Running multiple commands in a "pipeline" ( | ) causes the output of each command to be passed to the next, running each in sequence. It's important to know that any commands placed in parenthesis runs first, and can contain their own pipelines.
 
@@ -719,6 +827,19 @@ Commands Featured:
 [Select-Object]
 [Get-CimInstance]
 [Get-WmiObject]
+`
+
+## Week 7 - 
+
+Commands Featured: 
+`
+[New-Item]
+[Set-Location]
+[Clear-Host]
+[New-Alias]
+[Get-Variable]
+[New-Variable]
+[Remove-Variable]
 `
 
 ## Week 9 - The Task Scheduler
