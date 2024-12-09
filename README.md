@@ -256,7 +256,257 @@ Gets the events in a event log, or a list of event logs, on a computer.
 Get-EventLog -List
 ```
 
-///
+### New-NetIPAddress
+Creates and configures an IP address.
+
+```bash
+[-IPAddress]
+[-InterfaceAlias]
+[-DefaultGateway]
+[-AddressFamily]
+[-Type]
+[-PrefixLength]
+[-PolicyStore]
+[-CimSession]
+[-AsJob]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+New-NetIPAddress -InterfaceIndex # -IPAddress 10.20.30.40 -PrefixLength # -DefaultGateway 50.60.70.80
+```
+
+### Install-WindowsFeature
+Install one or more roles/services/features onto a specified server.
+
+```bash
+[-Name]
+[-Restart]
+[-IncludeAllSubFeature]
+[-IncludeManagementTools]
+[-Source]
+[-ComputerName]
+[-Credential]
+[-LogPath]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+Install WindowsFeature -Name Example -ComputerName Example
+```
+
+### Install-ADDSForest
+Creates a new Active Directory forest.
+
+```bash
+[-DomainName]
+[-CreateDnsDelegation]
+[-DatabasePath]
+[-NoDnsOnNetwork]
+[-DomainMode]
+[-ForestMode]
+[-InstallDns]
+[-LogPath]
+[-Force]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+Install-ADDSForest -DomainName "Example.com" -InstallDNS
+```
+
+### New-ADUser
+Creates an Active Directory user.
+
+```bash
+[-AccountExpirationDate]
+[-AccountPassword]
+[-AuthenticationPolicy]
+[-Certificates]
+[-City]
+[-Credential]
+[-Department]
+[-Description]
+[-DisplayName]
+[-EmailAddress]
+[-Enabled]
+[-GivenName]
+[-Initials]
+[-Name]
+[-Organization]
+[-OtherName]
+[-Path]
+[-SamAccountName]
+[-Server]
+[-State]
+[-Surname]
+[-Title]
+[-WhatIf]
+[Confirm]
+```
+
+```bash
+New-ADUser -Name 'Example'
+```
+
+### Get-DnsClientServerAddress
+Gets DNS server IP addresses from the TCP/IP properties on an interface.
+
+```bash
+[-InterfaceIndex]
+[-InterfaceAlias]
+[-AddressFamily]
+[-CimSession]
+[-AsJob]
+```
+
+```bash
+Get-DnsClientServerAddress
+```
+
+### Add-Computer
+Add a local computer to a domain or workgroup.
+
+```bash
+[-ComputerName]
+[-Credential]
+[-DomainName]
+[-OUPath]
+[-Server]
+[-Options]
+[-Restart]
+[-PassThru]
+[-NewName]
+[-Force]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+Add-Computer -DomainName Example -Restart
+```
+
+### Invoke-Command
+Runs commands on local and remote computers.
+
+```bash
+[-StrictMode]
+[-ScriptBlock]
+[-NoNewScope]
+[-InputObject]
+[-ArgumentList]
+```
+
+```bash
+Invoke-Command -FilePath C:\example.ps1 -ComputerName Example
+```
+
+### Enter-PSSession
+Starts an interactive session with a remote computer.
+
+```bash
+[-ComputerName]
+[-EnableNetworkAccess]
+[-Credential]
+[-ConfigurationName]
+[-Port]
+[-UseSSL]
+[-ApplicationName]
+[-SessionOption]
+[-Authentication]
+[-CertificateThumbprint]
+```
+
+```bash
+Enter-PSSession
+[host]: >
+```
+
+### New-PSSession
+Creates a persistent connection to a local or remote computer.
+
+```bash
+[-ComputerName]
+[-Credential]
+[-Name]
+[-EnableNetworkAccess]
+[-Port]
+[-UseSSL]
+[-ApplicationName]
+[-ThrottleLimit]
+[-SessionOption]
+[-Authentication]
+```
+
+```bash
+New-PSSession -ComputerName Example
+```
+
+### Import-Module
+Adds modules to the current session.
+
+```bash
+[-Global]
+[-Prefix]
+[-Name]
+[-Function]
+[-Cmdlet]
+[-Variable]
+[-Alias]
+[-Force]
+[-PassThru]
+[-ArgumentList]
+[-NoClobber]
+[-Scope]
+```
+
+```bash
+Import-Module -Name Example
+```
+
+### Enable-PSRemoting
+Configures the computer to receive remote commands.
+
+```bash
+[-Force]
+[-SkipNetworkProfileCheck]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+Enable-PSRemoting
+```
+
+### Get-NetAdapter
+Gets the basic network adapter properties.
+
+```bash
+[-Name]
+[-IncludeHidden]
+[-CimSession]
+[-AsJob]
+```
+
+```bash
+Get-NetAdapter -Name *
+```
+
+### Remove-PSSession
+Close one or more Powershell sessions.
+
+```bash
+[-Id]
+[-WhatIf]
+[-Confirm]
+```
+
+```bash
+Remove-PSSession -Id #
+```
 
 ### Get-CimClass
 Gets a list of CIM classes in a specific namespace.
@@ -358,9 +608,47 @@ Creates a new scheduled task settings object.
 [-StartWhenAvailable]
 ```
 
+```bash
+Register-ScheduledTask Example -Action ActionExample New-ScheduledTaskSettingsSet
+```
+
 ### New-ScheduledTask
+Creates a new scheduled task instance.
+
+```bash
+[-Action]
+[-Description]
+[-Principal]
+[-Settings]
+[-Trigger]
+[-CimSession]
+[-AsJob]
+```
+
+```bash
+New-ScheduledTask -Action Example -Principal -Example -Trigger Example -Settings Example
+```
 
 ### Register-ScheduledTask
+Registers a scheduled task definition on a computer.
+
+```bash
+[-Force]
+[-Password]
+[-User]
+[-TaskName]
+[-Action]
+[-Description]
+[-Settings]
+[-Trigger]
+[-RunLevel]
+[-CimSession]
+[-AsJob]
+```
+
+```bash
+Register-ScheduledTask -TaskName "Example" -Trigger (time)
+```
 
 =========
 
@@ -395,6 +683,33 @@ Commands Featured:
 [Get-EventLog]
 `
 
+## Lab 1 - Installing And Setting Up Server Core
+
+Commands Featured: 
+`
+[New-NetIPAddress]
+[Install-WindowsFeature]
+[Install-ADDSForest]
+[New-ADUser]
+[Get-DnsClientServerAddress]
+[Add-Computer]
+`
+
+## Week 5 - Remoting
+
+Commands Featured: 
+`
+[Invoke-Command]
+[Enter-PSSession]
+[New-PSSession]
+[Import-Module]
+[Enable-PSRemoting]
+[Get-EventLog]
+[Get-Module]
+[Get-NetAdapter]
+[Remove-PSSession]
+`
+
 ## Week 6 - Windows Management Instrumentation
 WMI is an external interface made to organize the management data in a typical Windows computer. If done correctly, PowerShell can access and use this information to its advantage.
 
@@ -418,4 +733,26 @@ Commands Featured:
 [New-ScheduledTaskSettingsSet]
 [New-ScheduledTask]
 [Register-ScheduledTask]
+`
+
+## Lab 4 - Importing Users and OUs into Domains
+
+Commands Featured: 
+`
+[Set-ExecutionPolicy]
+[Import-Module]
+[Import-Csv]
+[ConvertTo-SecureString]
+[New-ADUser]
+[New-ADOrganizationalUnit]
+[Get-ADUser]
+[Move-ADObject]
+[New-ADGroup]
+[Set-ADAccountPassword]
+[Disable-ADAccount]
+[Enable-ADAccount]
+[Unlock-ADAccount]
+[Remove-ADUser]
+[Add-ADGroupMember]
+[Get-ADGroupMember]
 `
